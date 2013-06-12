@@ -4,7 +4,7 @@
       <search id="plex-search">
         <header>
           <simpleHeader>
-            <title>Search Plex Library</title>
+            <title>Plex durchsuchen</title>
           </simpleHeader>
         </header>
       <baseURL>http://trailers.apple.com/search=</baseURL>

@@ -2,14 +2,14 @@
 <atv>
   <body>
     {{ADDXMLRELATIVE(onDeck:OnDeck)}}
-    {{ADDXMLRELATIVE(newest:RecentlyAired)}}
+    {{ADDXMLRELATIVE(recentlyViewedShows?stack=1:recentlyViewedShows)}}
     {{ADDXMLRELATIVE(recentlyAdded?stack=1:RecentlyAdded)}}
     
     <scroller id="com.sample.movie-showcase-grid">
       <items>
-        <collectionDivider alignment="left" accessibilityLabel="On Deck">
+        <collectionDivider alignment="left" accessibilityLabel="Aktuell">
           {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
-          <title>On Deck</title>
+          <title>Aktuell</title>
         </collectionDivider>
         <shelf id="shelf_0" columnCount="7">
           {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
@@ -29,21 +29,20 @@
           </sections>
         </shelf>
         
-        <collectionDivider alignment="left" accessibilityLabel="Recently Aired">
-          {{CUT(@RecentlyAired/size:CUT:0=CUT|1=)}}
-          <title>Recently Aired</title>
+        <collectionDivider alignment="left" accessibilityLabel="Zuletzt angesehen">
+          {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}
+          <title>Zuletzt angesehen</title>
         </collectionDivider>
         <shelf id="shelf_1" columnCount="7">
-          {{CUT(@RecentlyAired/size:CUT:0=CUT|1=)}}
+          {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}
           <sections>
             <shelfSection>
               <items>
-                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
-                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=EpisodePrePlay')">
-                  {{COPY(@RecentlyAired/Video)}}
-                  <title>{{episodestring(parentIndex:0:index:0)}}</title>
-                  <subtitle>{{VAL(title)}}</subtitle>
-                  <image>{{IMAGEURL(grandparentThumb)}}</image>
+                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')"
+                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')">
+                  {{COPY(@recentlyViewedShows/Directory)}}
+                  <title>{{VAL(title)}}</title>
+                  <image>{{IMAGEURL(thumb)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </moviePoster>
               </items>
@@ -51,9 +50,9 @@
           </sections>
         </shelf>
         
-        <collectionDivider alignment="left" accessibilityLabel="Recently Added">
+        <collectionDivider alignment="left" accessibilityLabel="Zuletzt hinzugefügt">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
-          <title>Recently Added</title>
+          <title>Zuletzt hinzugefügt</title>
         </collectionDivider>
         <shelf id="shelf_2" columnCount="7">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
@@ -64,7 +63,7 @@
                  onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season')">
                   {{COPY(@RecentlyAdded/Directory)}}
                   <title>{{VAL(parentTitle)}}</title>
-                  <subtitle>Season {{VAL(index)}}</subtitle>
+                  <subtitle>Staffel {{VAL(index)}}</subtitle>
                   <image>{{IMAGEURL(parentThumb)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </moviePoster>

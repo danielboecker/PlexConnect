@@ -6,7 +6,7 @@
         <header>
           <metadataHeader>
             <title>{{VAL(title2)}}</title>
-            <subtitle>{{VAL(size)}} Movies</subtitle>
+            <subtitle>{{VAL(size)}} Filme</subtitle>
           </metadataHeader>
         </header>
         <items>

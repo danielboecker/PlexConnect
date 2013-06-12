@@ -17,13 +17,13 @@
             <title>Details</title>
           </columnDefinition>
           <columnDefinition width="25" alignment="left">
-            <title>Actors</title>
+            <title>Darsteller</title>
           </columnDefinition>
           <columnDefinition width="25" alignment="left">
-            <title>Directors</title>
+            <title>Regie</title>
           </columnDefinition>
           <columnDefinition width="25" alignment="left">
-            <title>Producers</title>
+            <title>Produktion</title>
           </columnDefinition>
         </columnDefinitions>
         <rows>
@@ -73,12 +73,12 @@
                   <focusedImage>resource://QueueFocused.png</focusedImage>
                 </actionButton>
                 <actionButton id="subs" onSelect="selectSubs('{{ADDR_PMS()}}', '{{VAL(Video/Media/Part/id)}}')">
-                  <title>Subtitles</title>
+                  <title>Untertitel</title>
                   <image>resource://Preview.png</image>
                   <focusedImage>resource://PreviewFocused.png</focusedImage>
                 </actionButton>
                 <actionButton id="more" accessibilityLabel="More info" onSelect="atv.showMoreInfo();">
-                  <title>More</title>
+                  <title>Weitere Infos</title>
                   <image>resource://More.png</image>
                   <focusedImage>resource://MoreFocused.png</focusedImage>
                 </actionButton>
@@ -148,7 +148,7 @@
               <menuSection>
                 <header>
                   <textDivider alignment="left" accessibilityLabel="Directors">
-                    <title>Directors</title>
+                    <title>Regie</title>
                   </textDivider>
                 </header>
                 <items>
@@ -165,7 +165,7 @@
               <menuSection>
                 <header>
                   <textDivider alignment="left" accessibilityLabel="Actors">
-                    <title>Actors</title>
+                    <title>Darsteller</title>
                   </textDivider>
                 </header>
                 <items>

@@ -8,12 +8,12 @@
 			<navigation currentIndex="1">
 
 				<navigationItem id="0">
-					<title>All Shows</title> 
+					<title>Serien</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}/all&amp;PlexConnect=AllShows</url>
 				</navigationItem>
 
 				<navigationItem id="1">
-					<title>On Deck</title> 
+					<title>Aktuell</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=TVSection</url>
 				</navigationItem> 
 				
@@ -23,7 +23,7 @@
 				</navigationItem> 
 				
 				<navigationItem id="3">
-					<title>More...</title> 
+					<title>Mehr...</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=TVSecondary</url>
 				</navigationItem>
 				

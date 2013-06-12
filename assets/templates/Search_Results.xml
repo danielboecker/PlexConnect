@@ -7,14 +7,14 @@
         <menuSection>
             <header>
               <horizontalDivider alignment="left">
-                <title>Shows</title>
+                <title>Serien</title>
               </horizontalDivider>
             </header> 
             <items>
               <twoLineEnhancedMenuItem id="{{VAL(key)}}"  
                              onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')"
                              onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')"
-                             onHoldSelect="scrobbleMenu('Show', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                             onHoldSelect="scrobbleMenu('Serie', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
                 <image>{{URL(thumb)}}</image>
@@ -26,14 +26,14 @@
           <menuSection>
             <header>
               <horizontalDivider alignment="left">
-                <title>Movies / Episodes</title>
+                <title>Filme / Episoden</title>
               </horizontalDivider>
             </header> 
             <items>
               <twoLineEnhancedMenuItem id="{{VAL(key)}}"  
                              onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
                              onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=MoviePrePlay')"
-                             onHoldSelect="scrobbleMenu('Movie', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                             onHoldSelect="scrobbleMenu('Film', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Video:type::movie=COPY|episode=)}}
                 <label>{{VAL(title)}}</label>
                 <!--<label2>test</label2>{{CUT(Video/type:CUT:episode=CUT|movie=)}}-->
@@ -44,7 +44,7 @@
               <twoLineEnhancedMenuItem id="{{VAL(key)}}"  
                              onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
                              onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=MoviePrePlay')"
-                             onHoldSelect="scrobbleMenu('Movie', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                             onHoldSelect="scrobbleMenu('Film', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Video:type::episode=COPY|movie=)}}
                 <label>{{VAL(title)}}</label>
                 <label2>{{VAL(grandparentTitle)}} - {{episodestring(parentIndex:0:index:0)}}</label2>{{CUT(Video/grandparentTitle::=CUT)}}

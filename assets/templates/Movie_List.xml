@@ -31,7 +31,7 @@
               </oneLineMenuItem>{{CUT(Video/title:CUT:=)}}
             
               <oneLineMenuItem id="none">
-                <label>No Unwatched Movies</label>
+                <label>Keine ungesehenen Filme</label>
               </oneLineMenuItem>{{CUT(Video/title::=CUT)}}
             </items>
           </menuSection>

@@ -3,7 +3,7 @@
     <listWithPreview id="com.sample.menu-items-with-sections">
       <header>
         <simpleHeader>
-          <title>More...</title>
+          <title>Mehr...</title>
         </simpleHeader>
       </header>
       <menu>
@@ -11,23 +11,23 @@
           <menuSection>
             <items>
               <oneLineMenuItem id="unwatched" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/unwatched')" onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/unwatched')">
-                <label>Unwatched</label>
+                <label>Ungesehen</label>
               </oneLineMenuItem>
-              
+      <!--              
               <oneLineMenuItem id="recentlyViewedShows" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/recentlyViewedShows')" onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/recentlyViewedShows')">
                 <label>Recently Viewed Shows</label>
               </oneLineMenuItem>
-              
+       -->        
               <oneLineMenuItem id="collection" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/collection&amp;PlexConnect=Directory')" onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/collection&amp;PlexConnect=Directory')">
-                <label>By Collection</label>
+                <label>Nach Sammlung</label>
               </oneLineMenuItem>
               
               <oneLineMenuItem id="year" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/year&amp;PlexConnect=Directory')" onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/year&amp;PlexConnect=Directory')">
-                <label>By Year</label>
+                <label>Nach Jahr</label>
               </oneLineMenuItem>
               
               <oneLineMenuItem id="contentRating" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/contentRating&amp;PlexConnect=Directory')" onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}/contentRating&amp;PlexConnect=Directory')">
-                <label>By Content Rating</label>
+                <label>Nach Altersfreigabe</label>
               </oneLineMenuItem>
             </items>
           </menuSection>

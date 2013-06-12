@@ -18,7 +18,7 @@
             <items>
               <oneLineMenuItem id="{{VAL(key)}}" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')" 
                                                  onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')"
-                                                 onHoldSelect="scrobbleMenu('Show', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                                                 onHoldSelect="scrobbleMenu('Serie', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
                 <preview>
@@ -29,7 +29,7 @@
               </oneLineMenuItem>{{CUT(Directory/title:CUT:=)}}
             
               <oneLineMenuItem id="none">
-                <label>No Unwatched Shows</label>
+                <label>Keine ungesehenen Serien</label>
               </oneLineMenuItem>{{CUT(Directory/title::=CUT)}}
             </items>
           </menuSection>

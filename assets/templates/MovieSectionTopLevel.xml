@@ -8,12 +8,12 @@
 			<navigation currentIndex="1">
 
 				<navigationItem id="0">
-					<title>All Movies</title> 
+					<title>Filme</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}/all&amp;PlexConnect=AllMovies</url>
 				</navigationItem>
 
 				<navigationItem id="1">
-					<title>On Deck</title> 
+					<title>Aktuell</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=MovieSection</url>
 				</navigationItem> 
 				
@@ -23,22 +23,22 @@
 				</navigationItem> 
 				
 				<navigationItem id="3">
-					<title>Decades</title> 
+					<title>Jahrzente</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}/decade&amp;PlexConnect=DirectoryWithPreview</url>
 				</navigationItem>
 				
 				<navigationItem id="4">
-					<title>Directors</title> 
+					<title>Regie</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}/director&amp;PlexConnect=DirectoryWithPreview</url>
 				</navigationItem>
 				
 				<navigationItem id="5">
-					<title>Actors</title> 
+					<title>Darsteller</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}/actor&amp;PlexConnect=DirectoryWithPreview</url>
 				</navigationItem>
 				
 				<navigationItem id="6">
-					<title>More...</title> 
+					<title>Mehr...</title> 
 					<url>http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=MovieSecondary</url>
 				</navigationItem>
 

@@ -8,7 +8,7 @@
     <listWithPreview id="SettingsPage">
       <header>
         <simpleHeader>
-          <title>Settings</title>
+          <title>Einstellungen</title>
         </simpleHeader>
       </header>
       <preview>
@@ -17,8 +17,8 @@
           <summary/>
           <metadataKeys>
             <label>Version</label>
-            <label>Authors</label>
-            <label>Wiki/Docs</label>
+            <label>Autoren</label>
+            <label>Wiki/Doks</label>
             <label>Homepage</label>
             <label>Forum</label>
           </metadataKeys>
@@ -38,20 +38,20 @@
           <menuSection>
             <header>
               <horizontalDivider alignment="left">
-                <title>Appearance</title>
+                <title>Erscheinungsbild</title>
               </horizontalDivider>
             </header>
             <items>
               <oneLineMenuItem id="MovieView" onSelect="toggleSettings('MovieView')">
-                <label>Movie View</label>
+                <label>Filme</label>
                 <rightLabel>{{SETTING(movieview)}}</rightLabel>
               </oneLineMenuItem>
               <oneLineMenuItem id="ShowView" onSelect="toggleSettings('ShowView')">
-                <label>Show View</label>
+                <label>Serien</label>
                 <rightLabel>{{SETTING(showview)}}</rightLabel>
               </oneLineMenuItem>
               <oneLineMenuItem id="SeasonView" onSelect="toggleSettings('SeasonView')">
-                <label>Season View</label>
+                <label>Staffeln</label>
                 <rightLabel>{{SETTING(seasonview)}}</rightLabel>
               </oneLineMenuItem>
             </items>
@@ -64,15 +64,15 @@
             </header>
             <items>
               <oneLineMenuItem id="ForceDirectPlay" onSelect="toggleSettings('ForceDirectPlay')">
-                <label>Force Direct Play</label>
+                <label>Direct Play erzwingen</label>
                 <rightLabel>{{SETTING(forcedirectplay)}}</rightLabel>
               </oneLineMenuItem>
               <oneLineMenuItem id="ForceTranscode" onSelect="toggleSettings('ForceTranscode')">
-                <label>Force Transcode</label>
+                <label>Transcode erzwingen</label>
                 <rightLabel>{{SETTING(forcetranscode)}}</rightLabel>
               </oneLineMenuItem>
 							<oneLineMenuItem id="TranscodeQuality" onSelect="toggleSettings('TranscodeQuality')">
-                <label>Transcoder Quality</label>
+                <label>Transcoder Qualität</label>
                 <rightLabel>{{SETTING(transcodequality)}}</rightLabel>
               </oneLineMenuItem>
             </items>

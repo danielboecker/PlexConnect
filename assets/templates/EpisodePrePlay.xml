@@ -17,10 +17,10 @@
             <title>Details</title>
           </columnDefinition>
           <columnDefinition width="30" alignment="left">
-            <title>Directors</title>
+            <title>Regie</title>
           </columnDefinition>
           <columnDefinition width="30" alignment="left">
-            <title>Writers</title>
+            <title>Autoren</title>
           </columnDefinition>
         </columnDefinitions>
         <rows>
@@ -60,7 +60,7 @@
                   <focusedImage>resource://QueueFocused.png</focusedImage>
                 </actionButton>
                 <actionButton id="subs" onSelect="selectSubs('{{ADDR_PMS()}}', '{{VAL(Video/Media/Part/id)}}')">
-                  <title>Subtitles</title>
+                  <title>Untertitel</title>
                   <image>resource://Preview.png</image>
                   <focusedImage>resource://PreviewFocused.png</focusedImage>
                 </actionButton>

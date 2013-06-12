@@ -17,7 +17,7 @@
             <items>
               <twoLineEnhancedMenuItem id="{{VAL(key)}}" onPlay="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')" 
                                                          onSelect="atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}')"
-                                                         onHoldSelect="scrobbleMenu('Season', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
+                                                         onHoldSelect="scrobbleMenu('Staffel', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
                 <rightLabel>{{VAL(leafCount)}} Episodes</rightLabel>
@@ -31,7 +31,7 @@
               </twoLineEnhancedMenuItem>{{CUT(Directory/title:CUT:=)}}
             
               <oneLineMenuItem id="none">
-                <label>No Seasons</label>
+                <label>Keine Staffeln</label>
               </oneLineMenuItem>{{CUT(Directory/title::=CUT)}}
             </items>
           </menuSection>
