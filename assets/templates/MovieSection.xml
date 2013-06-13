@@ -9,7 +9,7 @@
     {{ADDXMLRELATIVE(recentlyAdded:RecentlyAdded)}}
     {{ADDXMLRELATIVE(newest:RecentlyReleased)}}
     
-    <scroller id="com.sample.movie-showcase-grid">
+    <scroller id="com.sample.movie-shelf">
       <items>
         <collectionDivider alignment="left" accessibilityLabel="Aktuell">
           {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
@@ -32,7 +32,8 @@
             </shelfSection>
           </sections>
         </shelf>
-        
+
+<!--        
         <collectionDivider alignment="left" accessibilityLabel="Zuletzt hinzugefügt">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
           <title>Zuletzt hinzugefügt</title>
@@ -50,6 +51,29 @@
                   <image>{{IMAGEURL(thumb)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </moviePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+-->
+
+        <collectionDivider alignment="left" accessibilityLabel="Zuletzt hinzugefügt">
+          {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
+          <title>Zuletzt hinzugefügt</title>
+        </collectionDivider>
+        <shelf id="shelf_1" columnCount="5">
+          {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
+          <sections>
+            <shelfSection>
+              <items>
+                <sixteenByNinePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" featured="true" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
+                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=MoviePrePlay')">
+                  {{COPY(@RecentlyAdded/Video)}}
+                  <title>{{VAL(title)}}</title>
+                  <subtitle>{{VAL(year)}}</subtitle>
+                  <image>{{IMAGEURL(art)}}</image>
+                  <defaultImage>resource://16X9.png</defaultImage>                  
+                </sixteenByNinePoster>
               </items>
             </shelfSection>
           </sections>

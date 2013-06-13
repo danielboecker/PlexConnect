@@ -4,9 +4,29 @@
     {{ADDXMLRELATIVE(onDeck:OnDeck)}}
     {{ADDXMLRELATIVE(recentlyViewedShows?stack=1:recentlyViewedShows)}}
     {{ADDXMLRELATIVE(recentlyAdded?stack=1:RecentlyAdded)}}
-    
-    <scroller id="com.sample.movie-showcase-grid">
-      <items>
+<!--    
+    <preview>
+      <scrollerPreview id="com.sample.scrollerPreview">
+        <items>
+          <grid id="grid_1" columnCount="5">
+          {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}          
+            <items>
+              <sixteenByNinePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" alwaysShowTitles="true" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')"
+                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')">
+                  {{COPY(@recentlyViewedShows/Directory)}}    
+                  <title>{{VAL(title)}}</title>                            
+                  <image>{{IMAGEURL(art)}}</image>
+                  <defaultImage>resource://16X9.png</defaultImage>               
+              </sixteenByNinePoster>
+            </items>
+          </grid>
+         
+        </items>
+      </scrollerPreview>
+    </preview>
+-->    
+    <scroller id="com.sample.movie-shelf">
+      <items>    
         <collectionDivider alignment="left" accessibilityLabel="Aktuell">
           {{CUT(@OnDeck/size:CUT:0=CUT|1=)}}
           <title>Aktuell</title>
@@ -16,19 +36,22 @@
           <sections>
             <shelfSection>
               <items>
-                <moviePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
-                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=EpisodePrePlay')">
+                <moviePoster id="{{VAL(key)}}"
+                             accessibilityLabel="{{VAL(title)}}"
+                             onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}{{PLAY_COMMAND()}})"
+                             onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=EpisodePrePlay')">
                   {{COPY(@OnDeck/Video)}}
                   <title>{{episodestring(parentIndex:0:index:0)}}</title>
                   <subtitle>{{VAL(title)}}</subtitle>
                   <image>{{IMAGEURL(grandparentThumb)}}</image>
-                  <defaultImage>resource://Poster.png</defaultImage>
+                  <defaultImage>resource://Poster.png</defaultImage>                
                 </moviePoster>
               </items>
             </shelfSection>
           </sections>
         </shelf>
-        
+
+<!--        
         <collectionDivider alignment="left" accessibilityLabel="Zuletzt angesehen">
           {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}
           <title>Zuletzt angesehen</title>
@@ -42,6 +65,7 @@
                  onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')">
                   {{COPY(@recentlyViewedShows/Directory)}}
                   <title>{{VAL(title)}}</title>
+                  <subtitle>{{EVAL2(leafCount:0:viewedLeafCount:0)}} Ungesehen</subtitle>                  
                   <image>{{IMAGEURL(thumb)}}</image>
                   <defaultImage>resource://Poster.png</defaultImage>
                 </moviePoster>
@@ -49,12 +73,47 @@
             </shelfSection>
           </sections>
         </shelf>
-        
+-->        
+        <collectionDivider alignment="left" accessibilityLabel="Zuletzt angesehen">
+          {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}
+          <title>Zuletzt angesehen</title>
+        </collectionDivider>
+        <shelf id="shelf_1" columnCount="5">
+        {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}              
+          <sections>
+            <shelfSection>
+              <items>
+                <sixteenByNinePoster id="{{VAL(key)}}" accessibilityLabel="{{VAL(title)}}" featured="true" onPlay="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')"
+                 onSelect="atv.sessionStorage['addrpms']='{{ADDR_PMS()}}';{{sendToATV(ratingKey:0:duration:0)}};atv.loadURL('http://trailers.apple.com{{ADDPATH(key)}}&amp;PlexConnect=Season_List')">
+                  {{COPY(@recentlyViewedShows/Directory)}}    
+                  <title>{{VAL(title)}}</title>                       
+                  <subtitle>{{EVAL2(leafCount:0:viewedLeafCount:0)}} Ungesehen</subtitle>                                         
+                  <image>{{IMAGEURL(art)}}</image>
+                  <defaultImage>resource://16X9.png</defaultImage>                  
+                </sixteenByNinePoster>
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+<!--       
+        <shelf id="shelf_2" columnCount="5">
+        {{CUT(@recentlyViewedShows/size:CUT:0=CUT|1=)}}              
+          <sections>
+            <shelfSection>
+              <items>
+                  <preview>
+                  <link>http://trailers.apple.com{{ADDPATH(key)}}/recentlyAdded?stack=1&amp;X-Plex-Container-Start=0&amp;X-Plex-Container-Size=25&amp;PlexConnect=SectionPreview-show</link>
+                  </preview>  
+              </items>
+            </shelfSection>
+          </sections>
+        </shelf>
+-->        
         <collectionDivider alignment="left" accessibilityLabel="Zuletzt hinzugefügt">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
           <title>Zuletzt hinzugefügt</title>
         </collectionDivider>
-        <shelf id="shelf_2" columnCount="7">
+        <shelf id="shelf_3" columnCount="7">
           {{CUT(@RecentlyAdded/size:CUT:0=CUT|1=)}}
           <sections>
             <shelfSection>

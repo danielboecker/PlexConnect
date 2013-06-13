@@ -20,7 +20,7 @@
                                                          onHoldSelect="scrobbleMenu('Staffel', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
                 {{COPY(Directory)}}
                 <label>{{VAL(title)}}</label>
-                <rightLabel>{{VAL(leafCount)}} Episodes</rightLabel>
+                <rightLabel>{{EVAL2(leafCount:0:viewedLeafCount:0)}} Ungesehen</rightLabel>
                 <image>{{IMAGEURL(thumb)}}</image>
                 <defaultImage>resource://Poster.png</defaultImage>
                 <preview>

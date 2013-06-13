@@ -11,8 +11,8 @@ debug levels (examples):
 
 dlevels = { "PlexConnect": 0, \
             "PlexGDM"    : 0, \
-            "DNSServer"  : 1, \
-            "WebServer"  : 1, \
+            "DNSServer"  : 0, \
+            "WebServer"  : 0, \
             "XMLConverter" : 0, \
             "Settings"   : 0, \
             "ATVSettings": 0, \

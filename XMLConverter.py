@@ -125,7 +125,7 @@ def GetURL(address, path):
             return data.getheader('Location')
         
         elif int(data.status) >= 400:
-            error = "HTTP response error: " + str(data.status) + " " + str(data.reason)
+            error = "HTTP response error: " + str(data.status) + " " + str(data.reason) + " " + path + " " + address
             dprint(__name__, 0, error)
             return False
         
@@ -742,6 +742,18 @@ class CCommandCollection(CCommandHelper):
         if not dfltd:
             key = self.applyMath(key, math, frmt)
         return key
+        
+    def ATTRIB_EVAL2(self, src, srcXML, param):
+        key, leftover, dfltd = self.getKey(src, srcXML, param)
+        key2, leftover, dfltd = self.getKey(src, srcXML, leftover)
+        intkey = eval(key)
+        intkey2 = eval(key2)
+        result = intkey-intkey2
+        strval = str(result)
+        
+        if result == 0:
+            strval = '-'
+        return strval
     
     def ATTRIB_SETTING(self, src, srcXML, param):
         opt, leftover = self.getParam(src, param)

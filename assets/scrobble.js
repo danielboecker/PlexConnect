@@ -5,9 +5,9 @@ function scrobbleMenu(type, ratingKey, addrPMS) {
   var xmlstr = '<?xml version="1.0" encoding="UTF-8"?><atv><head><script src="http://trailers.apple.com/scrobble.js"/></head> \
                 <body><optionList id="scrobble.optionDialog"><title>' + type + '</title><items> \
 								<oneLineMenuItem id="item1" onSelect="scrobble(\'' + addrPMS + '\', \'' + ratingKey + '\');atv.unloadPage();"> \
-								<label>             Mark as Watched</label></oneLineMenuItem> \
+								<label>             Als gesehen markieren</label></oneLineMenuItem> \
                 <oneLineMenuItem id="item1" onSelect="unscrobble(\'' + addrPMS + '\', \'' + ratingKey + '\');atv.unloadPage();"> \
-                <label>           Mark as Unwatched</label></oneLineMenuItem> \
+                <label>           Als ungesehen markieren</label></oneLineMenuItem> \
                 </items></optionList></body></atv>';
  	var doc = atv.parseXML(xmlstr);
   atv.loadXML(doc);

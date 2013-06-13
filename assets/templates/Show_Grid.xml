@@ -21,6 +21,7 @@
                          onHoldSelect="scrobbleMenu('Serie', '{{VAL(ratingKey)}}', '{{ADDR_PMS()}}');">
               {{COPY(Directory)}}
               <title>{{VAL(title)}}</title>
+              <subtitle>{{EVAL2(leafCount:0:viewedLeafCount:0)}} Ungesehen</subtitle>                                
               <image>{{IMAGEURL(thumb)}}</image>
               <defaultImage>resource://Poster.png</defaultImage>
             </moviePoster>{{CUT(Directory/title:CUT:=)}}
